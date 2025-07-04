@@ -1,5 +1,7 @@
     package com.example.notessaver
 
+    import android.content.Context
+    import android.graphics.BitmapFactory
     import android.os.Bundle
     import androidx.fragment.app.Fragment
     import android.view.LayoutInflater
@@ -16,6 +18,7 @@
     import com.example.notessaver.viewmodel.NoteViewModel
     import com.google.gson.Gson
     import dagger.hilt.android.AndroidEntryPoint
+    import java.io.File
 
 
     @AndroidEntryPoint
@@ -54,6 +57,9 @@
             super.onViewCreated(view, savedInstanceState)
             bindObserver()
             noteViewModel.getAllNotes()
+            val prefs = requireContext().getSharedPreferences("profile_prefs", Context.MODE_PRIVATE)
+            val savedImagePath = prefs.getString("image_path", null)
+
 
             binding.profileImage.setOnClickListener{
                 findNavController().navigate(R.id.action_mainFragment_to_profileFragment)
@@ -64,7 +70,14 @@
             binding.addNote.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_noteFragment)
             }
-        }
+
+            if (savedImagePath != null) {
+                val file = File(savedImagePath)
+                if (file.exists()) {
+                    val bitmap = BitmapFactory.decodeFile(file.absolutePath)
+                    binding.profileImage.setImageBitmap(bitmap) // Make sure this ImageView exists in your layout
+                }
+            }        }
 
         private fun bindObserver() {
             binding.lottieLoader.isVisible = false
