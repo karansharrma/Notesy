@@ -63,6 +63,7 @@ class UserRepository @Inject constructor(private val userAPI: UserApi) {
     suspend fun loginUser(userRequest: UserRequest) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
         val response = userAPI.signin(userRequest)
+        Log.d("JSONRESPONE",response.toString());
         if (response.isSuccessful && response.body() != null) {
             _userResponseLiveData.postValue(NetworkResult.Success(response.body()!!))
         } else {

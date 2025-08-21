@@ -78,9 +78,7 @@ class ProfileFragment : Fragment() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     binding.profileImage.setImageBitmap(resource)
 
-                    // Save image to internal storage
                     val path = saveBitmapToInternalStorage(resource)
-
                     saveImagePathToPrefs(path)
                 }
 

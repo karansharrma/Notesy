@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "921373230161",
+    "project_id": "notesyy-96d46",
+    "storage_bucket": "notesyy-96d46.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921373230161:android:268027b3d5dadc7629e470",
+        "android_client_info": {
+          "package_name": "com.example.notessaver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyAt9Q4gEX1uTX83UrtnbtVEk1MoV2oQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

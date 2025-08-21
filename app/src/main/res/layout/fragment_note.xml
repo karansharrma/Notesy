@@ -51,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/sf_pro_display_regular"
+            android:fontFamily="@font/sf_pro_display_medium"
             android:text="@string/note_title"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txt_title"
@@ -78,10 +78,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/sf_pro_display_regular"
+            android:fontFamily="@font/sf_pro_display_medium"
             android:text="@string/txt_description"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/txt_description"
